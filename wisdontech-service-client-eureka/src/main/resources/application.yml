@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: service-client-eureka
+  profiles:
+    active: dev

@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: wisdontech-config-server
+  profiles:
+    active: dev
+    

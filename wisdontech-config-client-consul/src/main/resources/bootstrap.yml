@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: wisdontech-config-client
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+    config:
+      profile: default
+      label: master
+      discovery: 
+        enabled: true
+        serviceId: wisdontech-config-server
+server:
+  port: 8070
+      

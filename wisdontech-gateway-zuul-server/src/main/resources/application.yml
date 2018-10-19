@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: wisdontech-gateway-zuul-server
+  profiles:
+    active: dev
+zuul:
+  routes:
+    service-1:
+      path: /service-1/**
+      serviceId:  service-client-consul           
+    service-2:
+      path: /service-2/**
+      serviceId:  service-client-consul-feign          

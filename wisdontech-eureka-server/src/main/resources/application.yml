@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: wisdontech-eureka-server
+  profiles:
+    active: 9000

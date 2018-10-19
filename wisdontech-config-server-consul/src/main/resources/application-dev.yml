@@ -1,0 +1,20 @@
+server:
+  port: 9061
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+    config:
+      server:
+        git:
+          uri: http://git.wisdontech.com/wisdontech/project/config/wisdontech-service-config.git
+          searchPaths: config-repo
+          username: deploy
+          password: deploy.1234  
+logging:
+  path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
+  level:
+    root: INFO
+    org:
+      springframework: INFO

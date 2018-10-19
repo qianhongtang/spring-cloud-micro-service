@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: service-client-consul-feign
+  profiles:
+    active: dev
+server:
+  context-path: service-2
