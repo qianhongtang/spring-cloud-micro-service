@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.wisdontech</groupId>
-	<artifactId>wisdontech-config-client</artifactId>
+	<artifactId>wisdontech-eureka-service-ribbon</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -27,30 +27,38 @@
 	</properties>
 
 	<dependencies>
+		<!-- 内部依赖 -->
+		<dependency>
+			<groupId>com.wisdontech.oauth2</groupId>
+			<artifactId>oauth2-authentication-protocol</artifactId>
+			<version>0.0.1-RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.wisdontech.common</groupId>
+			<artifactId>wisdontech-common</artifactId>
+			<version>0.0.1-RELEASE</version>
+		</dependency>
 
-		<!-- 配置服务客户端 -->
+		<!-- 微服务(同时作为服务中心客户端) -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-client</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
-		<!-- 服务注册发现 -->
+		<!-- 客户端负载均衡 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
+			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
 		</dependency>
-
-		<!-- 监控支持 -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -71,9 +79,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<executable>true</executable>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

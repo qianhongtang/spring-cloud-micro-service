@@ -1,0 +1,17 @@
+server:
+  port: 9020
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+logging:
+  path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
+  level:
+    root: INFO
+    org:
+      springframework: INFO

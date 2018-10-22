@@ -1,7 +1,10 @@
 server:
-  port: 8050
+  port: 9050
 spring:
   cloud:
+    consul:
+      host: localhost
+      port: 8500
     config:
       server:
         git:

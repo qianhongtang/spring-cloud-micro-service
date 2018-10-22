@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: eureka-service-feign
+  profiles:
+    active: dev

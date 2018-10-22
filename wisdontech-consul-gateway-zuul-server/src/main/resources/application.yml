@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: consul-gateway-zuul-server
+  profiles:
+    active: dev
+zuul:
+  routes:
+    consul-service:
+      path: /consul-service/**
+      serviceId:  consul-service        
+    consul-service-feign:
+      path: /consul-service-feign/**
+      serviceId:  consul-service-feign         

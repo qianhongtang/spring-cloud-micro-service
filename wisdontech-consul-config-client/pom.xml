@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.wisdontech</groupId>
-	<artifactId>wisdontech-config-client</artifactId>
+	<artifactId>wisdontech-consul-config-client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
