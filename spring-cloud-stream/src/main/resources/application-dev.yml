@@ -1,0 +1,14 @@
+server:
+  port: 9070
+spring:
+    rabbitmq:
+        host: localhost
+        password: 123456
+        port: 5672
+        username: spring
+logging:
+  path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
+  level:
+    root: INFO
+    org:
+      springframework: INFO
