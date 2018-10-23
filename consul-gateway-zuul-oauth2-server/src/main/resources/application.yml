@@ -11,3 +11,7 @@ zuul:
     consul-service-consumer-feign:
       path: /consul-service-consumer-feign/**
       serviceId:  consul-service-consumer-feign
+    consul-service-consumer-feign-ribbon-hystrix:
+      path: /consul-service-consumer-feign-ribbon-hystrix/**
+      serviceId:  consul-service-consumer-feign-ribbon-hystrix
+      

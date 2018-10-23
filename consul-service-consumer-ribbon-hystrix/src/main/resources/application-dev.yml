@@ -1,0 +1,13 @@
+server:
+  port: 9040
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+logging:
+  path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
+  level:
+    root: INFO
+    org:
+      springframework: INFO

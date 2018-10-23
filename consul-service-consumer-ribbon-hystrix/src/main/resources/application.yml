@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: consul-service-consumer-feign-ribbon-hystrix
+  profiles:
+    active: dev

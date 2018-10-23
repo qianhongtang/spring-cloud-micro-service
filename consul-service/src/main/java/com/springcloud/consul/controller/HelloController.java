@@ -17,4 +17,12 @@ public class HelloController {
 		System.out.println(services);
 		return services;
 	}
+
+	@GetMapping("/hystrix")
+	public String hystrix() throws InterruptedException {
+		Thread.sleep(5000L);
+		String services = "Services: " + discoveryClient.getServices();
+		System.out.println(services);
+		return services;
+	}
 }
