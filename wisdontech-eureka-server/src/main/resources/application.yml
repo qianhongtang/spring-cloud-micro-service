@@ -1,5 +1,5 @@
 spring:
   application:
-    name: wisdontech-eureka-server
+    name: eureka-server
   profiles:
     active: 9000

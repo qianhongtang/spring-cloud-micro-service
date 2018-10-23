@@ -8,8 +8,8 @@ spring:
     config:
       server:
         git:
-          uri: http://git.wisdontech.com/wisdontech/project/config/wisdontech-service-config.git
-          searchPaths: config-repo, config-repo/wisdontech-config-server
+          uri: http://git.wisdontech.com/wisdontech/project/config/config-center.git
+          searchPaths: config-repo, config-repo/config-server
           username: deploy
           password: deploy.1234  
 logging:
