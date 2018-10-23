@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.wisdontech</groupId>
-	<artifactId>wisdontech-eureka-service-feign</artifactId>
+	<artifactId>wisdontech-consul-service-consumer-feign</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -28,22 +28,16 @@
 
 	<dependencies>
 
-		<!-- 内部依赖 -->
-		<dependency>
-			<groupId>com.wisdontech.oauth2</groupId>
-			<artifactId>oauth2-authentication-protocol</artifactId>
-			<version>0.0.1-RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>com.wisdontech.common</groupId>
-			<artifactId>wisdontech-common</artifactId>
-			<version>0.0.1-RELEASE</version>
-		</dependency>
-
-		<!-- 微服务，客户端注册 -->
+		<!-- 服务发现 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
+		</dependency>
+
+		<!-- 监控支持 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
 		<!-- 服务消费 -->

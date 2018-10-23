@@ -7,7 +7,7 @@ zuul:
   routes:
     consul-service:
       path: /consul-service/**
-      serviceId:  consul-service        
-    consul-service-feign:
-      path: /consul-service-feign/**
-      serviceId:  consul-service-feign         
+      serviceId:  consul-service
+    consul-service-consumer-feign:
+      path: /consul-service-consumer-feign/**
+      serviceId:  consul-service-consumer-feign

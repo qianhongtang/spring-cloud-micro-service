@@ -15,13 +15,3 @@ logging:
     root: INFO
     org:
       springframework: INFO
-security:
-  oauth2:
-    sso:
-      loginPath: /dashboard/login      
-    client:
-      accessTokenUri: http://localhost:9010/oauth/token
-      userAuthorizationUri: http://localhost:9010/oauth/authorize
-      clientId: client_1
-      clientSecret: 123456
-      

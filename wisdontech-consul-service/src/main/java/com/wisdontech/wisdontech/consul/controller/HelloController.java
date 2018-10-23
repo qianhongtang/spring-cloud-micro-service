@@ -12,7 +12,7 @@ public class HelloController {
 	DiscoveryClient discoveryClient;
 
 	@GetMapping("/info")
-	public String dc() {
+	public String info() {
 		String services = "Hello Services: " + discoveryClient.getServices();
 		System.out.println(services);
 		return services;

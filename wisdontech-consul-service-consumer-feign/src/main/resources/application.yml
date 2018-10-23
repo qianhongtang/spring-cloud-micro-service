@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: consul-service-consumer-feign
+  profiles:
+    active: dev
+server:
+  context-path: consul-service-consumer-feign

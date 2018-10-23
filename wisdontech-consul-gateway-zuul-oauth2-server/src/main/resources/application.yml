@@ -5,9 +5,9 @@ spring:
     active: dev
 zuul:
   routes:
-    service-1:
-      path: /service-1/**
-      serviceId:  service-client-consul           
-    service-2:
-      path: /service-2/**
-      serviceId:  service-client-consul-feign          
+    consul-service:
+      path: /consul-service/**
+      serviceId:  consul-service
+    consul-service-consumer-feign:
+      path: /consul-service-consumer-feign/**
+      serviceId:  consul-service-consumer-feign

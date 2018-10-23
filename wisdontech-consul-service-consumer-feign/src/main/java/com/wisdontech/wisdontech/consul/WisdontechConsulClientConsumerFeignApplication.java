@@ -8,9 +8,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-public class WisdontechConsulClientFeignApplication {
+public class WisdontechConsulClientConsumerFeignApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WisdontechConsulClientFeignApplication.class, args);
+		SpringApplication.run(WisdontechConsulClientConsumerFeignApplication.class, args);
 	}
 }

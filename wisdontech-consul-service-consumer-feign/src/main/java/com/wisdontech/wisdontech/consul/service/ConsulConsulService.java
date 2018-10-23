@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author qianh
  *
  */
-@FeignClient("service-client-consul")
-public interface HelloService {
+@FeignClient("consul-service")
+public interface ConsulConsulService {
 
 	@GetMapping("/info")
-	String hello();
+	String info();
 }
