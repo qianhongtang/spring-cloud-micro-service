@@ -11,8 +11,12 @@ import org.springframework.web.bind.annotation.GetMapping;
  *
  */
 @FeignClient("consul-service")
-public interface ConsulConsulService {
+public interface ConsulService {
 
 	@GetMapping("/info")
 	String info();
+
+	@GetMapping("/hystrix")
+	String hystrix();
+
 }

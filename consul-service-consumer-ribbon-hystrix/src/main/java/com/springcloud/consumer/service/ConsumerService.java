@@ -1,19 +1,20 @@
 /**
  * 
  */
-package com.springcloud.eureka.service.impl;
+package com.springcloud.consumer.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.springcloud.eureka.service.ConsumerService;
 
 /**
  * @author qianh
  *
  */
-public class ConsumerServiceImpl implements ConsumerService {
+@Service
+public class ConsumerService {
 
 	@Autowired
 	RestTemplate restTemplate;

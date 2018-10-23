@@ -1,5 +1,5 @@
 spring:
   application:
-    name: eureka-service-feign
+    name: eureka-service-consumer-feign
   profiles:
     active: dev

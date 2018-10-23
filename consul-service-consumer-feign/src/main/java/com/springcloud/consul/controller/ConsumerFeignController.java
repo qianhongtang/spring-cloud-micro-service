@@ -1,38 +1,30 @@
-package com.springcloud.eureka.controller;
+package com.springcloud.consul.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springcloud.eureka.service.ConsulService;
-import com.springcloud.eureka.service.ConsumerService;
+import com.springcloud.consul.service.ConsulService;
 
 @RestController
-public class HelloController {
-
-	@Value("${spring.application.name}")
-	private String serviceName;
-
-	@Autowired
-	ConsumerService consumerService;
+public class ConsumerFeignController {
 
 	@Autowired
 	ConsulService consulService;
 
-	@GetMapping("/consumer")
-	public String consumer() {
-		return consumerService.consumer();
-	}
+	@Autowired
+	DiscoveryClient discoveryClient;
 
 	@GetMapping("/info")
 	public String info() {
 		return consulService.info();
 	}
 
-	@Autowired
-	DiscoveryClient discoveryClient;
+	@GetMapping("/hystrix")
+	public String hystrix() {
+		return consulService.hystrix();
+	}
 
 	@GetMapping("/my-info")
 	public String myInfo() {
@@ -40,5 +32,4 @@ public class HelloController {
 		System.out.println(services);
 		return services;
 	}
-
 }

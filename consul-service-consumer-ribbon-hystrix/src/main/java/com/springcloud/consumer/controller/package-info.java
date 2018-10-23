@@ -5,4 +5,4 @@
  * @author qianh
  *
  */
-package com.springcloud.eureka.service;
+package com.springcloud.consumer.controller;

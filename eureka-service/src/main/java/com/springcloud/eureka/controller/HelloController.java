@@ -11,9 +11,17 @@ public class HelloController {
 	@Autowired
 	DiscoveryClient discoveryClient;
 
-	@GetMapping("/hello")
-	public String dc() {
+	@GetMapping("/info")
+	public String info() {
 		String services = "Hello Services: " + discoveryClient.getServices();
+		System.out.println(services);
+		return services;
+	}
+
+	@GetMapping("/hystrix")
+	public String hystrix() throws InterruptedException {
+		Thread.sleep(5000L);
+		String services = "Services: " + discoveryClient.getServices();
 		System.out.println(services);
 		return services;
 	}

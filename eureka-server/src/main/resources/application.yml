@@ -2,4 +2,4 @@ spring:
   application:
     name: eureka-server
   profiles:
-    active: 9000
+    active: 8500

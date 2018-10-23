@@ -20,7 +20,7 @@ public class HelloController {
 
 	@GetMapping("/hello/{username}")
 	public String hello(@PathVariable String username, @RequestParam String accessToken) {
-		String user = restTemplate.getForObject("http://{serviceName}/hello/{username}?access_token={accessToken}",
+		String user = restTemplate.getForObject("http://{serviceName}/info/{username}?access_token={accessToken}",
 				String.class, serviceName, username, accessToken);
 		return user;
 	}

@@ -1,11 +1,11 @@
 server:
-  port: 9000
+  port: 8500
 eureka:
   instance:
     hostname: peer0
   client:
     serviceUrl:
-      defaultZone: http://localhost:9001/eureka/
+      defaultZone: http://localhost:8501/eureka/
 logging:
   path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
   level:

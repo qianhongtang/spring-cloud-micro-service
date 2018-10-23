@@ -4,10 +4,8 @@ eureka:
   instance:
     hostname: localhost
   client:
-    register-with-eureka: true
-    fetch-registry: true
     serviceUrl:
-      defaultZone: http://localhost:9000/eureka/,http://localhost:9001/eureka/
+      defaultZone: http://localhost:8500/eureka/,http://localhost:8501/eureka/
 logging:
   path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
   level:
