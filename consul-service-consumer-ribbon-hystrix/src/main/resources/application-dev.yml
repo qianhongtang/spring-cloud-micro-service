@@ -5,6 +5,9 @@ spring:
     consul:
       host: localhost
       port: 8500
+feign:
+  hystrix:
+    enabled: true      
 logging:
   path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
   level:

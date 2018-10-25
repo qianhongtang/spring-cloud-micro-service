@@ -1,5 +1,7 @@
+server:
+  context-path: consul-service-consumer-feign-hystrix
 spring:
   application:
-    name: consul-service-consumer-ribbon-hystrix
+    name: consul-service-consumer-feign-hystrix
   profiles:
     active: dev

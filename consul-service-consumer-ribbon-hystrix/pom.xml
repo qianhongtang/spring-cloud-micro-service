@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.wisdontech</groupId>
-	<artifactId>consul-service-consumer-ribbon-hystrix</artifactId>
+	<artifactId>consul-service-consumer-feign-hystrix</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -28,10 +28,10 @@
 
 	<dependencies>
 
-		<!-- 微服务(同时作为服务中心客户端) -->
+		<!-- 服务注册发现 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
 		</dependency>
 
 		<!-- 客户端负载均衡 -->
@@ -46,8 +46,11 @@
 			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
 		</dependency>
 
-		<!-- 服务消费 <dependency> <groupId>org.springframework.cloud</groupId> <artifactId>spring-cloud-starter-openfeign</artifactId> 
-			</dependency> -->
+		<!-- 服务消费 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
 
 		<!-- 监控支持 -->
 		<dependency>

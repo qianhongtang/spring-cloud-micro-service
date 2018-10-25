@@ -5,7 +5,9 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springcloud.consumer.service.ConsumerService;
+import com.netflix.hystrix.HystrixCircuitBreaker;
+import com.netflix.hystrix.HystrixCommandKey;
+import com.springcloud.consumer.service.ConsulService;
 
 @RestController
 public class HelloController {
@@ -21,20 +23,26 @@ public class HelloController {
 	}
 
 	@Autowired
-	ConsumerService consumerService;
+	ConsulService consulService;
 
-	@GetMapping("/consumer")
-	public String consumer() {
-		return consumerService.consumer();
+	@GetMapping("/info")
+	public String info() {
+		HystrixCircuitBreaker breaker = HystrixCircuitBreaker.Factory
+				.getInstance(HystrixCommandKey.Factory.asKey("ConsulService#hystrix()"));
+		if (breaker != null) {
+			System.out.println("断路器状态：" + breaker.isOpen());
+		}
+		return consulService.info();
 	}
 
-//	@Autowired
-//	ConsulService consulService;
-//
-//
-//	@GetMapping("/info")
-//	public String info() {
-//		return consulService.info();
-//	}
+	@GetMapping("/hystrix")
+	public String hystrix() {
+		HystrixCircuitBreaker breaker = HystrixCircuitBreaker.Factory
+				.getInstance(HystrixCommandKey.Factory.asKey("ConsulService#hystrix()"));
+		if (breaker != null) {
+			System.out.println("断路器状态：" + breaker.isOpen());
+		}
+		return consulService.hystrix();
+	}
 
 }
