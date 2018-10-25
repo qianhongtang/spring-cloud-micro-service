@@ -1,5 +1,5 @@
 spring:
   application:
-    name: eureka-service-consumer-ribbon-hystrix
+    name: eureka-service-consumer-ribbon
   profiles:
     active: dev
