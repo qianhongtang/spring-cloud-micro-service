@@ -1,3 +1,5 @@
+server:
+  port: 8060
 spring:
   application:
     name: config-client
@@ -6,6 +8,3 @@ spring:
       uri: http://localhost:8050/
       profile: default
       label: master
-server:
-  port: 8060
-      

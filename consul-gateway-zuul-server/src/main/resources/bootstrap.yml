@@ -1,0 +1,41 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: consul-gateway-zuul-server
+  profiles:
+    active: dev
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+logging:
+  path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
+  level:
+    root: INFO
+    org:
+      springframework: INFO
+zuul:
+  routes:
+    consul-service:
+      path: /consul-service/**
+      serviceId: consul-service
+    consul-service-consumer-feign:
+      path: /consul-service-consumer-feign/**
+      serviceId: consul-service-consumer-feign
+    consul-service-consumer-feign-ribbon-hystrix:
+      path: /consul-service-consumer-feign-ribbon-hystrix/**
+      serviceId: consul-service-consumer-feign-ribbon-hystrix

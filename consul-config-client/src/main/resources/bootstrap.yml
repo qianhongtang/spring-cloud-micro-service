@@ -1,3 +1,5 @@
+server:
+  port: 8060
 spring:
   application:
     name: config-client
@@ -8,9 +10,6 @@ spring:
     config:
       profile: default
       label: master
-      discovery: 
+      discovery:
         enabled: true
         serviceId: config-server
-server:
-  port: 8060
-      

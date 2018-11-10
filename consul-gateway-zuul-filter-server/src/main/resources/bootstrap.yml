@@ -1,0 +1,32 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: consul-gateway-zuul-oauth2-server
+  profiles:
+    active: dev
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+logging:
+  path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
+  level:
+    root: INFO
+    org:
+      springframework: INFO
+zuul:
+  routes:
+    consul-service:
+      path: /consul-service/**
+      serviceId: consul-service
+    consul-service-consumer-feign:
+      path: /consul-service-consumer-feign/**
+      serviceId: consul-service-consumer-feign
+    consul-service-consumer-feign-ribbon-hystrix:
+      path: /consul-service-consumer-feign-ribbon-hystrix/**
+      serviceId: consul-service-consumer-feign-ribbon-hystrix

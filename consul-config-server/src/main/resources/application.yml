@@ -1,6 +1,7 @@
+server:
+  port: 9050
 spring:
   application:
     name: config-server
   profiles:
     active: dev
-    

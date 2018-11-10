@@ -1,0 +1,67 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: consul-gateway-zuul-oauth2-server
+  profiles:
+    active: dev
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+logging:
+  path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
+  level:
+    root: INFO
+    org:
+      springframework: INFO
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      client-id: client
+      client-secret: 123456
+      access-token-uri: http://oauth2-authentication-server:9010/oauth/token
+      user-authorization-uri: http://oauth2-authentication-server:9010/oauth/authorize
+    resource:
+      user-info-uri: http://oauth2-authentication-server:9010/user
+      prefer-token-info: false
+zuul:
+  add-proxy-headers: true
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+  routes:
+    consul-service:
+      path: /consul-service/**
+      serviceId: consul-service
+    consul-service-consumer-feign:
+      path: /consul-service-consumer-feign/**
+      serviceId: consul-service-consumer-feign
+    consul-service-consumer-feign-ribbon-hystrix:
+      path: /consul-service-consumer-feign-ribbon-hystrix/**
+      serviceId: consul-service-consumer-feign-ribbon-hystrix
+    user:
+      path: /user/**
+      serviceId: oauth2-authentication-server
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+  eureka:
+    enabled: false
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
