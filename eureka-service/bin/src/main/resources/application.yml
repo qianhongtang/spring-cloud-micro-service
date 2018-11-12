@@ -1,11 +1,16 @@
 server:
-  port: 9040
+  port: 9020
+spring:
+  application:
+    name: eureka-service
+  profiles:
+    active: dev
 eureka:
   instance:
     hostname: localhost
   client:
     serviceUrl:
-      defaultZone: http://localhost:8500/eureka/,http://localhost:8500/eureka/
+      defaultZone: http://localhost:8500/eureka/,http://localhost:8501/eureka/
 logging:
   path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
   level:

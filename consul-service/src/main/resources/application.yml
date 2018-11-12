@@ -1,7 +1,0 @@
-server:
-  context-path: consul-service
-spring:
-  application:
-    name: consul-service
-  profiles:
-    active: dev

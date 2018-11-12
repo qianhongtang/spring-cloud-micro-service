@@ -1,13 +1,18 @@
 server:
-  port: 9040
+  port: 9020
 spring:
+  application:
+    name: consul-service
+  profiles:
+    active: dev
   cloud:
     consul:
       host: localhost
       port: 8500
-feign:
-  hystrix:
-    enabled: true      
+management:
+  endpoint:
+    shutdown:
+      enabled: true
 logging:
   path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
   level:

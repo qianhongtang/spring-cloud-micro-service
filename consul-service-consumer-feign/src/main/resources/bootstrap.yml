@@ -1,6 +1,8 @@
 server:
   port: 9030
 spring:
+  application:
+    name: consul-service-consumer-feign
   cloud:
     consul:
       host: localhost
@@ -14,4 +16,4 @@ logging:
   level:
     root: INFO
     org:
-      springframework: INFO
+      springframework: INFO  

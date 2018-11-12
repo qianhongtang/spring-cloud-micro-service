@@ -1,17 +1,18 @@
 server:
-  port: 9020
+  port: 9040
 spring:
+  application:
+    name: consul-service-consumer-feign-hystrix
   cloud:
     consul:
       host: localhost
       port: 8500
-management:
-  endpoint:
-    shutdown:
-      enabled: true
+feign:
+  hystrix:
+    enabled: true      
 logging:
   path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
   level:
     root: INFO
     org:
-      springframework: INFO
+      springframework: INFO    

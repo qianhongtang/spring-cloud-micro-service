@@ -15,10 +15,10 @@ import com.springcloud.consumer.service.fallback.ConsulServiceFallBack;
 @FeignClient(name = "consul-service", fallback = ConsulServiceFallBack.class)
 public interface ConsulService {
 
-	@GetMapping("/consul-service/info")
+	@GetMapping("/info")
 	String info();
 
-	@GetMapping("/consul-service/hystrix")
+	@GetMapping("/hystrix")
 	String hystrix();
 
 }

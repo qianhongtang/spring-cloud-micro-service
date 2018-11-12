@@ -1,5 +1,10 @@
 server:
   port: 9020
+spring:
+  application:
+    name: eureka-service
+  profiles:
+    active: dev
 eureka:
   instance:
     hostname: localhost
