@@ -29,13 +29,20 @@ logging:
     org:
       springframework: INFO
 zuul:
+  add-proxy-headers: true
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
   routes:
     consul-service:
-      path: /consul-service/**
+      path: consul-service
       serviceId: consul-service
     consul-service-consumer-feign:
-      path: /consul-service-consumer-feign/**
+      path: consul-service-consumer-feign
       serviceId: consul-service-consumer-feign
     consul-service-consumer-feign-ribbon-hystrix:
-      path: /consul-service-consumer-feign-ribbon-hystrix/**
+      path: consul-service-consumer-feign-ribbon-hystrix
       serviceId: consul-service-consumer-feign-ribbon-hystrix
+    oauth2-authentication-server:
+      path: oauth2-authentication-server
+      serviceId: oauth2-authentication-server
