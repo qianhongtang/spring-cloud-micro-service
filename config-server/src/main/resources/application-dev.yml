@@ -4,7 +4,7 @@ spring:
       server:
         git:
           uri: http://git.wisdontech.com/wisdontech/project/config/config-center.git
-          searchPaths: config-repo
+          searchPaths: config-repo/{application}
           username: deploy
           password: deploy.1234  
 logging:
