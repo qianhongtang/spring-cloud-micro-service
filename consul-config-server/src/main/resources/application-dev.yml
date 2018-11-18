@@ -6,8 +6,8 @@ spring:
     config:
       server:
         git:
-          uri: http://git.wisdontech.com/wisdontech/project/config/config-center.git
-          searchPaths: config-repo
+          uri: http://git.wisdontech.com/wisdontech/project/public/spring-cloud-demo.git
+          searchPaths: config-center/{application}
           username: deploy
           password: deploy.1234  
 logging:
