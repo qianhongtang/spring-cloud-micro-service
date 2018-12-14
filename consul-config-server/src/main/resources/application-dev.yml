@@ -1,15 +1,12 @@
 spring:
   cloud:
-    consul:
-      host: localhost
-      port: 8500
     config:
       server:
         git:
-          uri: http://git.wisdontech.com/wisdontech/project/public/spring-cloud-demo.git
+          uri: https://github.com/qianhongtang/spring-cloud-demo
           searchPaths: config-center/{application}
-          username: deploy
-          password: deploy.1234  
+          #username: username
+          #password: password
 logging:
   path: /opt/spring-boot-project/log/${spring.application.name}-${server.port}
   level:
