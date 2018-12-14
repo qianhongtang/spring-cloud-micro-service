@@ -3,7 +3,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/qianhongtang/spring-cloud-demo
+          uri: https://github.com/qianhongtang/spring-cloud-demo.git
           searchPaths: config-center/{application}
           #username: username
           #password: password
