@@ -33,7 +33,7 @@ security:
       token-info-uri: http://localhost:9000/oauth2-authentication-server/oauth/check_token
       user-info-uri: http://localhost:9000/oauth2-authentication-server/user
     authorization:
-      check-token-access: http://localhost:9005/oauth/check_token
+      check-token-access: http://localhost:9000/oauth/check_token
 zuul:
   add-proxy-headers: true
   host:

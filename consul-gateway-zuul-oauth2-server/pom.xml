@@ -27,17 +27,6 @@
 	</properties>
 
 	<dependencies>
-		<!-- 内部依赖 -->
-		<dependency>
-			<groupId>com.wisdontech.oauth2</groupId>
-			<artifactId>oauth2-authentication-protocol</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.wisdontech.common</groupId>
-			<artifactId>wisdontech-common-bean</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 
 		<!-- 网关支持 -->
 		<dependency>
